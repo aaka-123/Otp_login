@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <meta charset="utf-8">
+  <script src="https://kit.fontawesome.com/2361d96b39.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/homepage.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+  <nav class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">JOB PORTAL</p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- 6 -->
+        <li id="home"><a href="/">Find job</a></li>
+        <li id="about"><a href="/postjob">Post Job</a></li>
+        <li id="contact"><a href="/login">Login/Signup</a></li>
+
+      </ul>
+    </div>
+  </nav>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Jobs</h1>
+    <div class="card-deck">
+      <% jobs.forEach(function(job){ %>
+      <div class="card" style="width:50%; padding-bottom: 20px;">
+        <a href="/job/<%=job._id %>">
+        <div class="card-body" style="outline: 1px solid black; padding: 2px; padding-left:20px; padding-right:20px">
+          <h3 class="card-title" style="margin-bottom:10px"><%= job.title %></h3>
+          <h5 class="card-subtitle" style="margin-top:0; color:grey"><%= job.by %></h5>
+          <h5 class="card-subtitle" style="margin-top:0; color:grey"><i class="fi fi-rs-marker"></i>&nbsp<%= job.location %></h5>
+          <h5 class="card-subtitle" style="margin-top:0; color:grey"> Rs. <%= job.salary %></h5>
+        </div>
+        </a>
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
